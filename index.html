@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Expense Tracker</title>
+</head>
+<body>
+    <h1 >Gardening Expense Tracker App</h1>
+    <div class="container">
+     <div class="left_side">
+<div class="input-section">
+    <div>
+        <label for="category-select" style="font-size: 22px;">Category:</label>
+        <select id="category-select" style="font-size: 15px; padding: 3px; font-family: sans-serif;">
+            <option value="Plants">Plants</option>
+            <option value="Seeds">Seeds</option>
+            <option value="Fertilizers">Fertilizers</option>
+            <option value="Tools">Tools</option>
+            <option value="Pots">Pots</option>
+            <option value="Soil">Soil</option>
+            <option value="Other">Other</option>
+        </select>
+    </div>
+    <div>
+        <label for="amount-input">Amount:</label>
+        <input type="number" id="amount-input">
+    </div>
+    <div>
+        <label for="date-input">Date:</label>
+        <input type="date" id="date-input">
+    </div>
+
+    <button id="add-btn">Add</button>
+<div class="filter-container">
+    <div>
+        <label for="amount-filter">Filter by Amount:</label>
+        <input type="number" id="amount-filter">
+    </div>
+    <div>
+        <label for="date-filter">Filter by Date:</label>
+        <input type="date" id="date-filter">
+    </div>
+    <div class="filter-buttons">
+        <button id="filter-btn">Filter</button>
+        <button id="reset-filter-btn">Reset </button>
+    </div>
+    </div>
+</div>
+</div>
+     <div class="expenses-list">
+        <h2 style="width: 96%">Expenses List</h2>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Amount</th>
+                        <th>Date</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <div class="body_tab">
+                <tbody id="expense-table-body">
+                </div>
+                </tbody>
+            </table>
+        </div>
+        <div class="total-container">
+            <p>Total: <span id="total-amount"></span></p>
+        </div>
+     </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

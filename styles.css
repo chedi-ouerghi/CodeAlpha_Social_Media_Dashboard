@@ -1,0 +1,307 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Lilita+One&family=Lora:wght@500&family=Protest+Riot&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Lilita+One&family=Lora:wght@500&family=Protest+Riot&family=Protest+Strike&family=Single+Day&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+    border-radius: 25px;
+    padding: 60px;
+    background-color: #eff6ff;
+}
+
+h1 {
+    text-align: center;
+    margin: 0px auto 50px auto;
+    width: 60%;
+    border-radius: 25px;
+    padding: 20px 10px;
+    background-color: #cbf3e0;
+    font-weight: 100;
+    font-family: 'Caveat', cursive;
+    font-family: 'Lilita One', sans-serif;
+    font-family: 'Lora', serif;
+    font-family: 'Protest Riot', sans-serif;
+}
+
+h2 {
+    font-size: 40px;
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 20px;
+    width: 100%;
+    text-align: center;
+    font-family: 'Caveat', cursive;
+    font-family: 'Lilita One', sans-serif;
+    font-family: 'Lora', serif;
+    font-family: 'Protest Riot', sans-serif;
+    font-family: 'Protest Strike', sans-serif;
+    font-family: 'Single Day', cursive;
+    background-color: #87C17A;
+    color: white;
+}
+
+#add-btn {
+    font-size: 25px;
+    padding: 8px 18px;
+    border: none;
+    border-radius: 20px;
+    background-color: #6A994E;
+    color: white;
+}
+
+.input-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 45%;
+    float: left;
+}
+
+.input-section div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+
+
+input,
+select {
+    font-size: 15px;
+    padding: 3px;
+    font-family: sans-serif;
+}
+
+.expenses-list {
+    width: 60%;
+    float: right;
+}
+
+.table-container {
+    height: 43vh; 
+    overflow-y: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #B7E4C7;
+    color: black;
+}
+
+tfoot td {
+    font-weight: bold;
+}
+
+.delete-btn,
+.edit-btn {
+    font-size: 15px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: #6A994E;
+    margin-right: 5px;
+}
+
+.delete-btn:hover,
+.edit-btn:hover {
+    background-color: #406343;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.body_tab{
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 100%;
+}
+
+.table-container::-webkit-scrollbar {
+    width: 12px;
+}
+
+.table-container::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+    background-color: #6A994E;
+    border-radius: 3px;
+}
+
+.table-container::-webkit-scrollbar-thumb:hover {
+    background-color: #406343;
+}
+
+.left_side{
+        width: 30%;
+    height: 66vh;
+}
+.left_side .input-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    float: left;
+}
+
+.left_side .input-section > div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.input-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 45%;
+    height: 100%;
+    float: left;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+.input-section > div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+label {
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+input[type="number"],
+input[type="date"],
+select {
+    font-size: 16px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+#add-btn {
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #6A994E;
+    color: white;
+    cursor: pointer;
+}
+
+#filter-btn {
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #6A994E;
+    color: white;
+    cursor: pointer;
+}
+
+#reset-filter-btn {
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #6A994E;
+    color: white;
+    cursor: pointer;
+}
+
+#reset-filter-btn:hover {
+    background-color: #406343;
+}
+
+.filter-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.filter-container > div {
+    margin-right: 20px;
+}
+
+.filter-container > div:last-child {
+    margin-right: 0;
+}
+
+.filter-container > div > label {
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.filter-container > div > input[type="number"],
+.filter-container > div > input[type="date"] {
+    font-size: 16px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.filter-container > div > button {
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #6A994E;
+    color: white;
+    cursor: pointer;
+}
+
+.filter-container > div > button:hover {
+    background-color: #406343;
+}
+
+.filter-buttons{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+
+.total-container{
+    background-color: #6A994E;
+    width: 15%;
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid;
+    padding: 2px;
+    font-size: larger;
+    font-weight: bold;
+}
+
