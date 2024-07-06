@@ -3,76 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Expense Tracker</title>
+    <link href="styles.css" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/besom" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Social Media Dashboard</title>
 </head>
 <body>
-    <h1 >Gardening Expense Tracker App</h1>
-    <div class="container">
-     <div class="left_side">
-<div class="input-section">
-    <div>
-        <label for="category-select" style="font-size: 22px;">Category:</label>
-        <select id="category-select" style="font-size: 15px; padding: 3px; font-family: sans-serif;">
-            <option value="Plants">Plants</option>
-            <option value="Seeds">Seeds</option>
-            <option value="Fertilizers">Fertilizers</option>
-            <option value="Tools">Tools</option>
-            <option value="Pots">Pots</option>
-            <option value="Soil">Soil</option>
-            <option value="Other">Other</option>
-        </select>
-    </div>
-    <div>
-        <label for="amount-input">Amount:</label>
-        <input type="number" id="amount-input">
-    </div>
-    <div>
-        <label for="date-input">Date:</label>
-        <input type="date" id="date-input">
-    </div>
+    <div class="grid-container">
+        <header class="header">
+            <div class="menu-icon" onclick="openSidebar()">
+                <span class="material-symbols-outlined">menu</span>
+            </div>
+            <div class="header-left">
+                <span class="material-symbols-outlined">search</span>
+                <input type="text" class="search-input" placeholder="Search...">
+            </div>
+            <div class="header-right">
+                <span class="notification-badge">
+                    <span class="material-symbols-outlined">notifications</span>
+                    <span class="badge">3</span>
+                </span>
+                <span class="mail-badge">
+                    <span class="material-symbols-outlined">email</span>
+                    <span class="badge">1</span>
+                </span>
+                <span id="username-display" class="material-symbols-outlined">account_circle</span>
+            </div>
+        </header>
 
-    <button id="add-btn">Add</button>
-<div class="filter-container">
-    <div>
-        <label for="amount-filter">Filter by Amount:</label>
-        <input type="number" id="amount-filter">
-    </div>
-    <div>
-        <label for="date-filter">Filter by Date:</label>
-        <input type="date" id="date-filter">
-    </div>
-    <div class="filter-buttons">
-        <button id="filter-btn">Filter</button>
-        <button id="reset-filter-btn">Reset </button>
-    </div>
-    </div>
-</div>
-</div>
-     <div class="expenses-list">
-        <h2 style="width: 96%">Expenses List</h2>
-        <div class="table-container">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Category</th>
-                        <th>Amount</th>
-                        <th>Date</th>
-                        <th>Edit</th>
-                        <th>Delete</th>
-                    </tr>
-                </thead>
-                <div class="body_tab">
-                <tbody id="expense-table-body">
+        <aside id="sidebar" class="sidebar">
+            <div class="sidebar-title">
+                <div class="sidebar-brand">
+                    <span class="material-symbols-outlined">mood</span>Social Hub
                 </div>
-                </tbody>
-            </table>
-        </div>
-        <div class="total-container">
-            <p>Total: <span id="total-amount"></span></p>
-        </div>
-     </div>
+                <span class="material-symbols-outlined" onclick="closeSidebar()">close</span>
+            </div>
+            <ul class="sidebar-list">
+                <li class="sidebar-list-items">
+                    <a href="#"><span class="material-symbols-outlined">dashboard</span>Home</a>
+                </li>
+                <li class="sidebar-list-items">
+                    <a href="#"><span class="material-symbols-outlined">timeline</span>Activities</a>
+                </li>
+                <li class="sidebar-list-items">
+                    <a href="#"><span class="material-symbols-outlined">phone</span>Help</a>
+                </li>
+                <li class="sidebar-list-items">
+                    <a href="#"><span class="material-symbols-outlined">email</span>Inbox</a>
+                </li>
+                <li class="sidebar-list-items">
+                    <a href="#"><span class="material-symbols-outlined">settings</span>Preferences</a>
+                </li>
+            </ul>
+        </aside>
+
+        <main class="main-container">
+            <!-- Login Form -->
+            <div id="login-form">
+                <h2>Login</h2>
+                <input type="text" id="username" placeholder="Username">
+                <input type="password" id="password" placeholder="Password">
+                <button onclick="login()">Login</button>
+                <div id="error-message" class="error-message" style="display: none;">Invalid login credentials</div>
+            </div>
+            
+            <!-- Feed Container -->
+            <div id="feed-container" style="display:none;">
+                <div class="main-title">
+                    <h2>DASHBOARD</h2>
+                </div>
+                <div class="main-cards">
+                    <!-- Display username -->
+                    <!-- <div id="welcome-message"></div> -->
+                    
+                    <div class="card">
+                        <div class="main-inner">
+                            <h2>FOLLOWERS</h2>
+                            <span class="material-symbols-outlined">groups</span>
+                        </div>
+                        <h1>1.5k</h1>
+                    </div>
+                    <div class="card">
+                        <div class="main-inner">
+                            <h2>SUBSCRIBERS</h2>
+                            <span class="material-symbols-outlined">subscriptions</span>
+                        </div>
+                        <h1>11.5k</h1>
+                    </div>
+                    <div class="card">
+                        <div class="main-inner">
+                            <h2>LIKES</h2>
+                            <span class="material-symbols-outlined">thumb_up</span>
+                        </div>
+                        <h1>4k</h1>
+                    </div>
+                    <div class="card">
+                        <div class="main-inner">
+                            <h2>MESSAGES</h2>
+                            <span class="material-symbols-outlined">Forum</span>
+                        </div>
+                        <h1>180</h1>
+                    </div>
+                </div>
+
+                <div class="products">
+                    <div class="product-card">
+                        <div class="product-icon background-red">
+                            <i class="bi bi-twitter"></i>
+                        </div>
+                        <div class="product-details">
+                            <h1 class="text-red">+50</h1>
+                            <h2 class="product-title">Twitter Updates</h2>
+                            <p class="text-secondary">Latest tweets from Tunisia</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-icon background-red">
+                            <i class="bi bi-instagram"></i>
+                        </div>
+                        <div class="product-details">
+                            <h1 class="text-green">+30</h1>
+                            <h2 class="product-title">Instagram Stories</h2>
+                            <p class="text-secondary">Recent stories from Tunisia</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-icon background-red">
+                            <i class="bi bi-facebook"></i>
+                        </div>
+                        <div class="product-details">
+                            <h1 class="text-orange">-50</h1>
+                            <h2 class="product-title">Facebook Engagement</h2>
+                            <p class="text-secondary">Engage with followers on Facebook</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-icon background-red">
+                            <i class="bi bi-linkedin"></i>
+                        </div>
+                        <div class="product-details">
+                            <h1 class="text-blue">+100</h1>
+                            <h2 class="product-title">LinkedIn Updates</h2>
+                            <p class="text-secondary">Professional updates from LinkedIn</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <p style="text-align: center; width: 100%;">&copy; 2024 Social Hub</p>
+            </div>
+        </footer>
     </div>
-    <script src="script.js"></script>
+    
+    <!-- Custom JS -->
+  <script src="scripts.js"></script>
 </body>
 </html>
